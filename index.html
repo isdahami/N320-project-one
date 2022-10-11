@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 | Connect Four</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- game board -->
+    <div class="game-board">
+        <span class="head-txt">Connect Four</span>
+        <!-- six rows containing seven columns of circles -->
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100" >
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <div class="game-board-row">
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+            </svg> 
+        </div>
+        <!-- button that replays the game -->
+       <button id="game-btn" onclick="resetGame()">Replay!</button>
+    </div>
+   
+    
+
+    <script src="app/app.js"></script>
+</body>
+</html>
