@@ -1,10 +1,16 @@
 
 // global variables
-
 playerOne = "red";
 playerTwo = "yellow";
 // what player is currently going
 activePlayer = 1;
+
+// reload animation
+let gba = document.getElementsByClassName("game-board");
+for(let i = 0; i < gba.length; i++) {
+    TweenLite.from(gba[i], { duration: .6, y: -100, alpha: 0, delay: i * .1});
+}
+
 
 // this class represents the game board
 class gameBoard {
@@ -20,25 +26,29 @@ class gameBoard {
 
     reset = document.getElementById("game-btn").addEventListener("click", this.resetGame);
     
-    constructor() {
-    }
-    
-    
+     
     // a method to watch for gameWin
     gameWin() {
-        let pieces = document.querySelectorAll("circle");
-
-        // checks for vertical win
-        for(let i=0; i < this.gameArray.length; i++) {
-
-        }
-
-        // checks for horizontal win
-        
-        
+        // for (let i = 0; i < gameArray.length; i++) {
+        //     let count = 0;
+        //     for (let j = 0; j < gameArray[i].length; j++) {
+        //       if (gameArray[i][j] == '1') {
+        //         count++;
+        //         if (count === 4) {                    // place check after incrementing
+        //           console.log('1 wins')
+        //           return true;
+        //         }
+        //       } else {
+        //         count = 0;                            // reset
+        //       }
+        //     }
+        //   }
+        //   return false;
+          
+       
     }
 
-    // need a method to reset the game
+    // method to reset the game
     resetGame() {
         // refreshes page for new game
         location.reload();
@@ -76,22 +86,24 @@ class gamePiece {
        setCirc.classList.add("gameCirc");
        setCirc.dataset.redPiece = this.redPiece;
        setCirc.dataset.yellowPiece = this.yellowPiece;
-       console.log(event.target.dataset.row)
-       console.log(event.target.dataset.col)
+    //    console.log(event.target.dataset.row)
+    //    console.log(event.target.dataset.col)
 
        
     
-       console.log(g.gameArray)
+    //    console.log(g.gameArray)
        
        // what player is currently going
        if (activePlayer == 1) {
            // turn new circle into red
             event.target.style.fill = this.redPiece;
             g.gameArray[event.target.dataset.row][event.target.dataset.col] = 1
+            TweenLite.from(event.target, { duration: .6, y: -100});
        } else {
         // turns circle into yellow
         event.target.style.fill = this.yellowPiece;
         g.gameArray[event.target.dataset.row][event.target.dataset.col] = 2
+        TweenLite.from(event.target, { duration: .6, y: -100});
        }
        console.log(g.gameArray)
        // adds 1 to active player
@@ -101,6 +113,112 @@ class gamePiece {
         activePlayer = 1;
        }
 
+    // checks for row win for player 1
+    for (let i = 0; i < g.gameArray.length; i++) {
+        let count = 0;
+        for (let j = 0; j < g.gameArray[i].length; j++) {
+          if (g.gameArray[i][j] == '1') {
+            count++;
+            if (count === 4) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+            //   return true;
+            }
+          } else {
+            count = 0;                            
+          }
+        }
+      }
+
+    // checks for row win for player 2  
+    for (let i = 0; i < g.gameArray.length; i++) {
+        let count = 0;
+        for (let j = 0; j < g.gameArray[i].length; j++) {
+          if (g.gameArray[i][j] == '2') {
+            count++;
+            if (count === 4) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+            //   return true;
+            }
+          } else {
+            count = 0;                            
+          }
+        }
+      }
+
+
+
+    // checks for col win for player 1
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][i] == '1'
+            && g.gameArray[1][i] == '1'
+            && g.gameArray[2][i] == '1'
+            && g.gameArray[3][i] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][i] == '1'
+            && g.gameArray[3][i] == '1'
+            && g.gameArray[4][i] == '1'
+            && g.gameArray[5][i] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    
+
+    // checks for col win for player 2
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][i] == '2'
+            && g.gameArray[1][i] == '2'
+            && g.gameArray[2][i] == '2'
+            && g.gameArray[3][i] == '2') 
+            {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][i] == '2'
+            && g.gameArray[3][i] == '2'
+            && g.gameArray[4][i] == '2'
+            && g.gameArray[5][i] == '2') 
+            {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }  
+     
+
+
+    
     //    console.log(this.boardCircle);
     //    console.log(setCirc);
     // sets setCirc onto the board
