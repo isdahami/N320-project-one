@@ -11,149 +11,527 @@
 <body>
     
     <!-- game board -->
-    <div class="game-board">
+    <div class="game-board" >
         <span class="head-txt">Connect Four</span>
         <!-- six rows containing seven columns of circles -->
-        <div class="game-board-row">
-            <svg class="gameBoardCircle" height="100" width="100" >
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+        <div class="game-board-row" >
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-        </div>
-        <div class="game-board-row">
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-        </div>
-        <div class="game-board-row">
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-        </div>
-        <div class="game-board-row">
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
-            </svg> 
-            <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="0"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
         </div>
-        <div class="game-board-row">
+        <div class="game-board-row" >
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="1"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
         </div>
-        <div class="game-board-row">
+        <div class="game-board-row" >
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()" />
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
             <svg class="gameBoardCircle" height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#00008b" class="boardCircle" onclick="userClick()"/>
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="2"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+        </div>
+        <div class="game-board-row" >
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="3"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+        </div>
+        <div class="game-board-row" >
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="4"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+        </div>
+        <div class="game-board-row" >
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="0"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="1"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="2"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="3"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="4"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="5"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
+            </svg> 
+            <svg class="gameBoardCircle" height="100" width="100">
+                <circle 
+                cx="50" 
+                cy="50"
+                r="40" 
+                stroke="#00008b" 
+                data-row="5"
+                data-col="6"
+                class="boardCircle" 
+                onclick="gp.userClick(event)" 
+                />
             </svg> 
         </div>
         <!-- button that replays the game -->
-       <button id="game-btn" onclick="resetGame()">Replay!</button>
+       <button id="game-btn" onclick="gameBoard.resetGame()">Replay!</button>
     </div>
    
     
