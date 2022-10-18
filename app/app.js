@@ -1,3 +1,6 @@
+// CONNECT FOUR
+
+
 
 // global variables
 playerOne = "red";
@@ -28,24 +31,7 @@ class gameBoard {
     
      
     // a method to watch for gameWin
-    gameWin() {
-        // for (let i = 0; i < gameArray.length; i++) {
-        //     let count = 0;
-        //     for (let j = 0; j < gameArray[i].length; j++) {
-        //       if (gameArray[i][j] == '1') {
-        //         count++;
-        //         if (count === 4) {                    // place check after incrementing
-        //           console.log('1 wins')
-        //           return true;
-        //         }
-        //       } else {
-        //         count = 0;                            // reset
-        //       }
-        //     }
-        //   }
-        //   return false;
-          
-       
+    gameWin() {   
     }
 
     // method to reset the game
@@ -98,6 +84,7 @@ class gamePiece {
            // turn new circle into red
             event.target.style.fill = this.redPiece;
             g.gameArray[event.target.dataset.row][event.target.dataset.col] = 1
+            // animation for circle
             TweenLite.from(event.target, { duration: .6, y: -100});
        } else {
         // turns circle into yellow
@@ -115,10 +102,14 @@ class gamePiece {
 
     // checks for row win for player 1
     for (let i = 0; i < g.gameArray.length; i++) {
+        // starts count
         let count = 0;
+        // for loop to go through gameArray
         for (let j = 0; j < g.gameArray[i].length; j++) {
+            // if the array is equal to 1 then add 1
           if (g.gameArray[i][j] == '1') {
             count++;
+            // when the count is equal to 4, then alert win
             if (count === 4) {                   
                 Swal.fire(
                     'Player One Won!',
@@ -171,6 +162,20 @@ class gamePiece {
         }
     }
     for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][i] == '1'
+            && g.gameArray[2][i] == '1'
+            && g.gameArray[3][i] == '1'
+            && g.gameArray[4][i] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
         if (g.gameArray[2][i] == '1'
             && g.gameArray[3][i] == '1'
             && g.gameArray[4][i] == '1'
@@ -184,8 +189,37 @@ class gamePiece {
           return true;
         }
     }
-    
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][6] == '1'
+            && g.gameArray[1][6] == '1'
+            && g.gameArray[2][6] == '1'
+            && g.gameArray[3][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][6] == '1'
+            && g.gameArray[3][6] == '1'
+            && g.gameArray[4][6] == '1'
+            && g.gameArray[5][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+   
 
+    // couldn't figure out how to not repeat myself when it came to finding wins
     // checks for col win for player 2
     for (let i = 0; i < g.gameArray.length; i++) {
         if (g.gameArray[0][i] == '2'
@@ -193,6 +227,20 @@ class gamePiece {
             && g.gameArray[2][i] == '2'
             && g.gameArray[3][i] == '2') 
             {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][i] == '2'
+            && g.gameArray[2][i] == '2'
+            && g.gameArray[3][i] == '2'
+            && g.gameArray[4][i] == '2'
+            ) {                   
                 Swal.fire(
                     'Player Two Won!',
                     'Press REPLAY button to play again!',
@@ -215,6 +263,627 @@ class gamePiece {
           return true;
         }
     }  
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][6] == '2'
+            && g.gameArray[1][6] == '2'
+            && g.gameArray[2][6] == '2'
+            && g.gameArray[3][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][6] == '2'
+            && g.gameArray[3][6] == '2'
+            && g.gameArray[4][6] == '2'
+            && g.gameArray[5][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+
+    // checks for diagonal win for player 1
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][0] == '1'
+            && g.gameArray[1][1] == '1'
+            && g.gameArray[2][2] == '1'
+            && g.gameArray[3][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][1] == '1'
+            && g.gameArray[1][2] == '1'
+            && g.gameArray[2][3] == '1'
+            && g.gameArray[3][4] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][2] == '1'
+            && g.gameArray[1][3] == '1'
+            && g.gameArray[2][4] == '1'
+            && g.gameArray[3][5] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][3] == '1'
+            && g.gameArray[1][4] == '1'
+            && g.gameArray[2][5] == '1'
+            && g.gameArray[3][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][0] == '1'
+            && g.gameArray[2][1] == '1'
+            && g.gameArray[3][2] == '1'
+            && g.gameArray[4][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][0] == '1'
+            && g.gameArray[3][1] == '1'
+            && g.gameArray[4][2] == '1'
+            && g.gameArray[5][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][1] == '1'
+            && g.gameArray[2][2] == '1'
+            && g.gameArray[3][3] == '1'
+            && g.gameArray[4][4] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][2] == '1'
+            && g.gameArray[2][3] == '1'
+            && g.gameArray[3][4] == '1'
+            && g.gameArray[4][5] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][3] == '1'
+            && g.gameArray[2][4] == '1'
+            && g.gameArray[3][5] == '1'
+            && g.gameArray[4][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][2] == '1'
+            && g.gameArray[3][3] == '1'
+            && g.gameArray[4][4] == '1'
+            && g.gameArray[5][5] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][1] == '1'
+            && g.gameArray[3][2] == '1'
+            && g.gameArray[4][3] == '1'
+            && g.gameArray[5][4] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][3] == '1'
+            && g.gameArray[3][4] == '1'
+            && g.gameArray[4][5] == '1'
+            && g.gameArray[5][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][0] == '1'
+            && g.gameArray[4][1] == '1'
+            && g.gameArray[3][2] == '1'
+            && g.gameArray[2][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][0] == '1'
+            && g.gameArray[3][1] == '1'
+            && g.gameArray[2][2] == '1'
+            && g.gameArray[1][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[3][0] == '1'
+            && g.gameArray[2][1] == '1'
+            && g.gameArray[1][2] == '1'
+            && g.gameArray[0][3] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][1] == '1'
+            && g.gameArray[4][2] == '1'
+            && g.gameArray[3][3] == '1'
+            && g.gameArray[2][4] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][2] == '1'
+            && g.gameArray[4][3] == '1'
+            && g.gameArray[3][4] == '1'
+            && g.gameArray[2][5] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][3] == '1'
+            && g.gameArray[4][4] == '1'
+            && g.gameArray[3][5] == '1'
+            && g.gameArray[2][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][1] == '1'
+            && g.gameArray[3][2] == '1'
+            && g.gameArray[2][3] == '1'
+            && g.gameArray[1][4] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][2] == '1'
+            && g.gameArray[3][3] == '1'
+            && g.gameArray[2][4] == '1'
+            && g.gameArray[1][5] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][3] == '1'
+            && g.gameArray[3][4] == '1'
+            && g.gameArray[2][5] == '1'
+            && g.gameArray[1][6] == '1'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    
+
+    // checks for diagonal win for player 2
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][0] == '2'
+            && g.gameArray[1][1] == '2'
+            && g.gameArray[2][2] == '2'
+            && g.gameArray[3][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][1] == '2'
+            && g.gameArray[1][2] == '2'
+            && g.gameArray[2][3] == '2'
+            && g.gameArray[3][4] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][2] == '2'
+            && g.gameArray[1][3] == '2'
+            && g.gameArray[2][4] == '2'
+            && g.gameArray[3][5] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[0][3] == '2'
+            && g.gameArray[1][4] == '2'
+            && g.gameArray[2][5] == '2'
+            && g.gameArray[3][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][0] == '2'
+            && g.gameArray[2][1] == '2'
+            && g.gameArray[3][2] == '2'
+            && g.gameArray[4][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][0] == '2'
+            && g.gameArray[3][1] == '2'
+            && g.gameArray[4][2] == '2'
+            && g.gameArray[5][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][1] == '2'
+            && g.gameArray[2][2] == '2'
+            && g.gameArray[3][3] == '2'
+            && g.gameArray[4][4] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][2] == '2'
+            && g.gameArray[2][3] == '2'
+            && g.gameArray[3][4] == '2'
+            && g.gameArray[4][5] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[1][3] == '2'
+            && g.gameArray[2][4] == '2'
+            && g.gameArray[3][5] == '2'
+            && g.gameArray[4][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][2] == '2'
+            && g.gameArray[3][3] == '2'
+            && g.gameArray[4][4] == '2'
+            && g.gameArray[5][5] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][1] == '2'
+            && g.gameArray[3][2] == '2'
+            && g.gameArray[4][3] == '2'
+            && g.gameArray[5][4] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[2][3] == '2'
+            && g.gameArray[3][4] == '2'
+            && g.gameArray[4][5] == '2'
+            && g.gameArray[5][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][0] == '2'
+            && g.gameArray[4][1] == '2'
+            && g.gameArray[3][2] == '2'
+            && g.gameArray[2][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][0] == '2'
+            && g.gameArray[3][1] == '2'
+            && g.gameArray[2][2] == '2'
+            && g.gameArray[1][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[3][0] == '2'
+            && g.gameArray[2][1] == '2'
+            && g.gameArray[1][2] == '2'
+            && g.gameArray[0][3] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][1] == '2'
+            && g.gameArray[4][2] == '2'
+            && g.gameArray[3][3] == '2'
+            && g.gameArray[2][4] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player One Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][2] == '2'
+            && g.gameArray[4][3] == '2'
+            && g.gameArray[3][4] == '2'
+            && g.gameArray[2][5] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[5][3] == '2'
+            && g.gameArray[4][4] == '2'
+            && g.gameArray[3][5] == '2'
+            && g.gameArray[2][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][1] == '2'
+            && g.gameArray[3][2] == '2'
+            && g.gameArray[2][3] == '2'
+            && g.gameArray[1][4] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][2] == '2'
+            && g.gameArray[3][3] == '2'
+            && g.gameArray[2][4] == '2'
+            && g.gameArray[1][5] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
+    for (let i = 0; i < g.gameArray.length; i++) {
+        if (g.gameArray[4][3] == '2'
+            && g.gameArray[3][4] == '2'
+            && g.gameArray[2][5] == '2'
+            && g.gameArray[1][6] == '2'
+            ) {                   
+                Swal.fire(
+                    'Player Two Won!',
+                    'Press REPLAY button to play again!',
+                    'success'
+                  )
+          return true;
+        }
+    }
      
 
 
